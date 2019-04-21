@@ -46,6 +46,11 @@ public class PrimeGenerateController {
     return ResponseEntity.ok().body(String.valueOf(bigPrime));
   }
 
+  @GetMapping("/healthz")
+  public ResponseEntity<String> healthz() {
+    return ResponseEntity.ok().body("OK");
+  }
+
   /**
    * @param size
    */

@@ -11,8 +11,8 @@ pool:
 
 variables:
   baseImageName: 'quay.io/rhdevelopers/prime-generator'
-  quarkusImageName: "$(baseImageName):v$(BuildID)-quarkus"
-  sbImageName: "$(baseImageName):v$(BuildID)-sb"
+  quarkusImageName: "$(baseImageName):v$(Build.BuildId)-quarkus"
+  sbImageName: "$(baseImageName):v$(Build.BuildId)-sb"
 
 steps:
 - script: docker login -u $(dockerUserID) -p $(dockerUserPassword) https://quay.io
