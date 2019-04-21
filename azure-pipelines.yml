@@ -18,7 +18,7 @@ steps:
 - script: docker login -u $(dockerUserID) -p $(dockerUserPassword) https://quay.io
   displayName: 'Login into Container Registry'
 
-- script: cd java/quarkus && docker build -f Dockerfile -t $(quarkusImageName) . && cd ../..
+- script: cd quarkus && docker build -f Dockerfile -t $(quarkusImageName) . && cd ../..
   displayName: 'Build Quarkus Docker Image'
 
 - script: docker tag $(quarkusImageName) "$(baseImageName):latest"
@@ -27,7 +27,7 @@ steps:
 - script: docker push $(quarkusImageName) && docker push "$(baseImageName):latest"
   displayName: 'Push Quarkus Images to Registry'
 
-- script: cd java/springboot && docker build -f Dockerfile -t $(sbImageName) . && cd ../..
+- script: cd springboot && docker build -f Dockerfile -t $(sbImageName) . && cd ../..
   displayName: 'Build SpringBoot Docker Image'
 
 - script: docker push $(sbImageName)
