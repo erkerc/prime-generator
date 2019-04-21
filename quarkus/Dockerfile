@@ -4,7 +4,7 @@ COPY . /project
 # uncomment this to set the MAVEN_MIRROR_URL of your choice, to make faster builds
 # ARG MAVEN_MIRROR_URL=<your-maven-mirror-url>
 # e.g.
-ARG MAVEN_MIRROR_URL=http://192.168.0.105:8081/nexus/content/groups/public
+# ARG MAVEN_MIRROR_URL=http://192.168.0.105:8081/nexus/content/groups/public
 
 RUN /usr/local/bin/entrypoint-run.sh mvn -DskipTests clean package -Pnative
 
